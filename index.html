@@ -77,7 +77,7 @@
 <div class="widgets">
 <widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" placeholder="站内搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
 
-<widget class="widget-wrapper recent"><div class="widget-header cap theme dis-select"><span class="name">最近更新</span></div><div class="widget-body related-posts fs14"><a class="item title" href="/2024/02/18/weekly/2024/20240212-20240218/"><span class="title">20240212-20240218 一周见闻</span></a><a class="item title" href="/2024/02/18/read/%E5%BC%B9%E6%80%A7%E7%94%9F%E9%95%BF/"><span class="title">读书笔记-弹性生长</span></a><a class="item title" href="/2024/02/11/weekly/2024/20240205-20240211/"><span class="title">20240205-20240211 一周见闻</span></a><a class="item title" href="/2024/01/28/weekly/2024/20240122-20240128/"><span class="title">20240122-20240128 一周见闻</span></a><a class="item title" href="/2024/01/21/weekly/2024/20240115-20240121/"><span class="title">20240115-20240121 一周见闻</span></a></div></widget>
+<widget class="widget-wrapper recent"><div class="widget-header cap theme dis-select"><span class="name">最近更新</span></div><div class="widget-body related-posts fs14"><a class="item title" href="/2024/02/21/dev/MAC%E6%9C%AC%E5%9C%B0%E9%85%8D%E7%BD%AESSH%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/"><span class="title">MAC本地配置SSH踩坑记录</span></a><a class="item title" href="/2024/02/18/weekly/2024/20240212-20240218/"><span class="title">20240212-20240218 一周见闻</span></a><a class="item title" href="/2024/02/18/read/%E5%BC%B9%E6%80%A7%E7%94%9F%E9%95%BF/"><span class="title">读书笔记-弹性生长</span></a><a class="item title" href="/2024/02/11/weekly/2024/20240205-20240211/"><span class="title">20240205-20240211 一周见闻</span></a><a class="item title" href="/2024/01/28/weekly/2024/20240122-20240128/"><span class="title">20240122-20240128 一周见闻</span></a></div></widget>
 
 
 </div>
@@ -99,7 +99,21 @@
 
 <div class="nav-wrap"><nav class="sub post cap"><a class="active" href="/">近期发布</a><a href="/categories">分类</a><a href="/tags">标签</a><a href="/archives">归档</a></nav></div>
 
-  <div class="post-list post"><a class="post-card post " href="/2024/02/18/read/%E5%BC%B9%E6%80%A7%E7%94%9F%E9%95%BF/">
+  <div class="post-list post"><a class="post-card post " href="/2024/02/21/dev/MAC%E6%9C%AC%E5%9C%B0%E9%85%8D%E7%BD%AESSH%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">
+<article class="md-text"><h2 class="post-title">MAC本地配置SSH踩坑记录</h2><div class="excerpt"><p>
+由于之前买了多台机子生成了多份ssh密钥，都堆在~/.ssh目录下，太乱了，重新梳理配置下，记录下踩坑
+
+生成 ssh key
+命令: ssh-keygen -t rsa -C &quot;xx@xx.com&quot;
+解释:
+-t rsa 指定 rsa 算法
+-C &quot;xx email&quot; 指定 邮箱
+
+
+注意点：如果生成的过程要用到密码，注意记住密码
+
+如果使用到了密...</p></div><div class="meta cap"><span class="cap" id="post-meta">发布于&nbsp;<time datetime="2024-02-21T10:00:00.000Z">2024-02-21</time></span><span class="cap breadcrumb">开发</span></div></article>
+</a><a class="post-card post " href="/2024/02/18/read/%E5%BC%B9%E6%80%A7%E7%94%9F%E9%95%BF/">
 <article class="md-text"><h2 class="post-title">读书笔记-弹性生长</h2><div class="excerpt"><p>书籍信息
 
 弹性生长|200
@@ -147,23 +161,6 @@ typing-一个简洁的打字练习网站
 BewlyBewly - Bilibili主页美化chrome插件
 吉他自学工具站
 Gemini Pro Ch...</p></div><div class="meta cap"><span class="cap" id="post-meta">发布于&nbsp;<time datetime="2024-01-28T04:00:00.000Z">2024-01-28</time></span><span class="cap breadcrumb">一周见闻</span></div></article>
-</a><a class="post-card post " href="/2024/01/21/weekly/2024/20240115-20240121/">
-<article class="md-text"><h2 class="post-title">20240115-20240121 一周见闻</h2><div class="excerpt"><p>资源
-GPTs 商店的的提示词
-LangGPT：让每个人都能成为提示词专家
-优质信息源大集合
-
-工具
-最佳平替
-Fitten Code：免费AI代码助手
-Douban Book+ - 发现好书靠豆瓣，阅读好书靠 Douban Book+
-CV - 一个简洁的，构建个人在线简历的项目
-翻译本地文件
-
-好文
-苹果是如何构建可存储数十亿数据库的iCloud
-Linux下内存泄漏排查
-HTTP 49...</p></div><div class="meta cap"><span class="cap" id="post-meta">发布于&nbsp;<time datetime="2024-01-21T04:00:00.000Z">2024-01-21</time></span><span class="cap breadcrumb">一周见闻</span></div></article>
 </a></div>
   
   <div class='paginator-wrap dis-select'>
