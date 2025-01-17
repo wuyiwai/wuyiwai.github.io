@@ -1,5 +1,25 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>wuyiwai's blog</title><link>https://wuyiwai.github.io</link><description>Hello World</description><copyright>wuyiwai's blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/12730345?v=4</url><title>avatar</title><link>https://wuyiwai.github.io</link></image><lastBuildDate>Fri, 03 Jan 2025 01:48:33 +0000</lastBuildDate><managingEditor>wuyiwai's blog</managingEditor><ttl>60</ttl><webMaster>wuyiwai's blog</webMaster><item><title>2024年12月见闻</title><link>https://wuyiwai.github.io/post/2024-nian-12-yue-jian-wen.html</link><description># 文章&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>wuyiwai's blog</title><link>https://wuyiwai.github.io</link><description>Hello World</description><copyright>wuyiwai's blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/12730345?v=4</url><title>avatar</title><link>https://wuyiwai.github.io</link></image><lastBuildDate>Fri, 17 Jan 2025 03:10:04 +0000</lastBuildDate><managingEditor>wuyiwai's blog</managingEditor><ttl>60</ttl><webMaster>wuyiwai's blog</webMaster><item><title>2025年1月</title><link>https://wuyiwai.github.io/post/2025-nian-1-yue.html</link><description># 教程
+- [Go 程序员宝典](https://shgopher.github.io/GOFamily/)
+
+# 书
+- [生成式AI手册](https://genai-handbook.github.io/) | `英文`
+- [rust 100](https://colobu.com/rust100/) - 用100个练习题学习rust | `rust` -  `中文`
+- [大语言模型](https://github.com/LLMBook-zh/LLMBook-zh.github.io) | `中文` - `支持下载`
+
+# 工具
+- [MarkEdit](https://github.com/MarkEdit-app/MarkEdit) - markdown工具新秀
+- [电动汽车省钱计算器](https://ev-save.freetool.live/)
+- [3分钟AI读书](https://3min.top/zh) - 同时这个应用也是一个非常用的独立应用开发典范
+- [Awesome Bilibili Extra](https://github.com/HCLonely/awesome-bilibili-extra) - 收集一些让我们在使用 B 站时更加方便的浏览器扩展 / 脚本 / 程序
+- [STranslate](https://github.com/ZGGSONG/STranslate/blob/main/README_ZH.md) - 又一款OCR翻译利器
+- [cursor.directory](https://cursor.directory/) - cursor 提示词集合
+
+# 文章
+- [大橘和朋友们的周刊 - 第 024 期 - 云渡新岁](https://rrorangeandfriends.site/posts/2024/024) - 非常多有意思的应用
+- [我是如何从零开始手搓一个独立游戏并上架 Steam 的](https://www.v2ex.com/t/1102126)
+
+。</description><guid isPermaLink="true">https://wuyiwai.github.io/post/2025-nian-1-yue.html</guid><pubDate>Fri, 03 Jan 2025 01:48:31 +0000</pubDate></item><item><title>2024年12月见闻</title><link>https://wuyiwai.github.io/post/2024-nian-12-yue-jian-wen.html</link><description># 文章&#13;
 - [tech| 再探 grpc](https://www.jianshu.com/p/f3221df39e6f)&#13;
 - [我做系统架构的一些原则](https://coolshell.cn/articles/21672.html)&#13;
 - [K8s 里我的容器到底用了多少内存？](https://mp.weixin.qq.com/s/iN3tMmJ2y_nUa6ATInyP1A)&#13;
