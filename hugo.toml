@@ -1,0 +1,42 @@
+baseURL = 'https://wuyiwai.github.io/'
+languageCode = 'zh-cn'
+title = 'wuyiwai的博客'
+theme = "github-style"
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+
+# github-style 的一些配置
+lastmod = true
+[frontmatter]
+  lastmod = ["lastmod", ":fileModTime", ":default"]
+  date = ["date", "publishDate", "lastmod"]
+  dateFormat = "2006-01-02T15:04:05+08:00"
+
+# 配置页: https://themes.gohugo.io/themes/github-style/
+[params]
+  author = "wuyiwai"
+  description = "Hello world"
+  github = "wuyiwai"
+  email = "wuyiwai@qq.com"
+  url = "https://wuyiwai.github.io/"
+  keywords = "wuyiwai's blog"
+  rss = true
+  lastmod = true
+  userStatusEmoji = "😀"
+  favicon = "/images/avatar.png"
+  avatar = "/images/avatar.png"
+  headerIcon = "/images/avatar.png"
+  location = "China"
+  #enableGitalk = true
+  #custom_css = ["css/custom.css"]
+  #custom_js = ["js/custom.js"]
+  enableSearch = true
+  timeZone = "Asia/Shanghai"
+
+[outputs]
+  home = ["html", "json"]
+
+[outputFormats.json]
+  mediaType = "application/json"
+  baseName = "index"
+  isPlainText = false

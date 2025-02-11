@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script type="application/javascript" src='http://localhost:1313/js/theme-mode.js'></script>
+    <link rel="stylesheet" href='http://localhost:1313/css/frameworks.min.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/github.min.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/github-style.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/light.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/dark.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/syntax.css' />
+    <title>阿里云机器部署wordpress、typecho记录 - wuyiwai的博客</title>
+    
+    <link rel="icon" type="image/x-icon" href='/images/avatar.png'>
+    
+    <meta name="theme-color" content="#1e2327">
+
+    
+    
+
+    
+    <meta name="description"
+  content="记录了用阿里云机器部署wordpress、typecho的详细过程" />
+<meta name="keywords"
+  content='wuyiwai&#39;s blog' />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="http://localhost:1313/post/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%BA%E5%99%A8%E9%83%A8%E7%BD%B2wordpress/" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="阿里云机器部署wordpress、typecho记录 - wuyiwai的博客" />
+<meta name="twitter:description"
+  content="记录了用阿里云机器部署wordpress、typecho的详细过程" />
+<meta name="twitter:site" content="http://localhost:1313/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image"
+  content="http://localhost:1313/">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="阿里云机器部署wordpress、typecho记录 - wuyiwai的博客">
+<meta property="og:description"
+  content="记录了用阿里云机器部署wordpress、typecho的详细过程" />
+<meta property="og:url" content="http://localhost:1313/post/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%BA%E5%99%A8%E9%83%A8%E7%BD%B2wordpress/" />
+<meta property="og:site_name" content="阿里云机器部署wordpress、typecho记录" />
+<meta property="og:image"
+  content="http://localhost:1313/">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2025-02-11 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body>
+  <div style="position: relative">
+  <header class="Header js-details-container Details px-3 px-md-4 px-lg-5 flex-wrap flex-md-nowrap open Details--on">
+    <div class="Header-item mobile-none" style="margin-top: -4px; margin-bottom: -4px;">
+      <a class="Header-link" href="http://localhost:1313/">
+        <img class="octicon" height="32" width="32" src="/images/avatar.png">
+      </a>
+    </div>
+    <div class="Header-item d-md-none">
+      <button class="Header-link btn-link js-details-target" type="button"
+        onclick="document.querySelector('#header-search').style.display = document.querySelector('#header-search').style.display == 'none'? 'block': 'none'">
+        <svg height="24" class="octicon octicon-three-bars" viewBox="0 0 16 16" version="1.1" width="24">
+          <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z">
+          </path>
+        </svg>
+      </button>
+    </div>
+    <div style="display: none;" id="header-search"
+      class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex">
+      <div
+        class="Header-search header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to">
+        <div class="position-relative">
+          
+          <form target="_blank" id="search-form" action="" accept-charset="UTF-8" method="get"
+            autocomplete="off">
+            <label
+              class="Header-search-label form-control input-sm header-search-wrapper p-0 js-chromeless-input-container header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center">
+              <input type="text"
+                class="Header-search-input form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable"
+                name="q" value="" placeholder="Search" autocomplete="off">
+            </label>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="Header-item Header-item--full flex-justify-center d-md-none position-relative">
+      <a class="Header-link " href="http://localhost:1313/">
+        <img class="octicon octicon-mark-github v-align-middle" height="32" width="32" src="/images/avatar.png">
+      </a>
+    </div>
+    <div class="Header-item" style="margin-right: 0;">
+      <a href="javascript:void(0)" class="Header-link no-select" onclick="switchTheme()">
+        <svg style="fill: var(--color-profile-color-modes-toggle-moon);" class="no-select" viewBox="0 0 16 16"
+          version="1.1" width="16" height="16">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M4.52208 7.71754C7.5782 7.71754 10.0557 5.24006 10.0557 2.18394C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961C9.95801 1.07727 10.3495 0.771159 10.6474 0.99992C12.1153 2.12716 13.0615 3.89999 13.0615 5.89383C13.0615 9.29958 10.3006 12.0605 6.89485 12.0605C3.95334 12.0605 1.49286 10.001 0.876728 7.24527C0.794841 6.87902 1.23668 6.65289 1.55321 6.85451C2.41106 7.40095 3.4296 7.71754 4.52208 7.71754Z">
+          </path>
+        </svg>
+      </a>
+    </div>
+  </header>
+</div>
+
+  <div id="search-result" class="container-lg px-3 new-discussion-timeline" style="display: none;">
+</div>
+
+  
+<div class="application-main">
+  <div>
+  <main>
+    <div class="gisthead pagehead bg-gray-light pb-0 pt-3 mb-4">
+      <div class="px-0">
+        <div class="mb-3 d-flex px-3 px-md-3 px-lg-5">
+          <div class="flex-auto min-width-0 width-fit mr-3">
+            <div class="d-flex">
+              <div class="d-none d-md-block">
+                <a class="avatar mr-2 flex-shrink-0" href="http://localhost:1313/">
+                  <img class=" avatar-user"
+                    src="/images/avatar.png"
+                    width="32" height="32"></a>
+              </div>
+              <div class="d-flex flex-column">
+                <h1 class="break-word f3 text-normal mb-md-0 mb-1">
+                  <span class="author">
+                    <a href="http://localhost:1313/">wuyiwai</a>
+                  </span>
+                  <span class="path-divider">/</span>
+                  <strong class="css-truncate css-truncate-target mr-1" style="max-width: 410px">
+                    <a href="http://localhost:1313/post/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%BA%E5%99%A8%E9%83%A8%E7%BD%B2wordpress/">阿里云机器部署wordpress、typecho记录</a>
+                  </strong>
+                </h1>
+                <div class="note m-0">
+                  Created <relative-time datetime="Tue, 11 Feb 2025 00:00:00 &#43;0000"
+                    class="no-wrap">
+                    Tue, 11 Feb 2025 00:00:00 &#43;0000</relative-time>
+
+                  
+                  <span class="file-info-divider"></span>
+                  Modified <relative-time datetime="Wed, 12 Feb 2025 01:46:30 &#43;0800"
+                    class="no-wrap">
+                    Wed, 12 Feb 2025 01:46:30 &#43;0800</relative-time>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-lg px-3 new-discussion-timeline">
+      <div class="repository-content gist-content">
+        <div>
+          <div class="js-gist-file-update-container js-task-list-container file-box">
+            <div id="file-pytest" class="file my-2">
+              <div id="post-header" class="file-header d-flex flex-md-items-center flex-items-start sticky-header" style="z-index: 2">
+                <div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto">
+                  <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
+                    
+                    <summary id="toc-toggle" onclick="clickToc()" class="btn btn-octicon m-0 mr-2 p-2">
+                      <svg aria-hidden="true" viewBox="0 0 16 16" height="16" width="16" class="octicon octicon-list-unordered">
+                        <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
+                      </svg>
+                    </summary>
+                    <details-menu class="SelectMenu" id="toc-details" style="display: none;">
+                      <div class="SelectMenu-modal rounded-3 mt-1" style="max-height: 340px;">
+                        <div class="SelectMenu-list SelectMenu-list--borderless p-2" style="overscroll-behavior: contain;" id="toc-list">
+                        </div>
+                      </div>
+                    </details-menu>
+                      2355 Words
+                    
+
+                  </div>
+                  <div class="file-actions flex-order-2 pt-0">
+                    
+                    
+                    <a class="muted-link mr-3" href="/tags/%E6%8A%80%E6%9C%AF">
+                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                        <path fill-rule="evenodd"
+                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
+                        </path>
+                      </svg>
+                      技术
+                    </a>
+                    
+                    <a class="muted-link mr-3" href="/tags/%E5%8D%9A%E5%AE%A2">
+                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                        <path fill-rule="evenodd"
+                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
+                        </path>
+                      </svg>
+                      博客
+                    </a>
+                    
+                    <a class="muted-link mr-3" href="/tags/linux">
+                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                        <path fill-rule="evenodd"
+                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
+                        </path>
+                      </svg>
+                      linux
+                    </a>
+                    
+                    
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="Box-body px-5 pb-5" style="z-index: 1">
+                <article class="markdown-body entry-content container-lg"><h2 id="部署目的及机器选择">部署目的及机器选择</h2>
+<ul>
+<li>目的：部署个人网站、个人项目（以下的所有配置选项都是基于该目的）</li>
+<li>机器选择：
+<ul>
+<li>服务器类型：ECS(弹性计算服务)：适合个人项目、博客网站和智能家居项目</li>
+<li>地域和可用区：选择离你用户群体最近的地域，一般在中国主要选择华东1（杭州）**或华北2（北京）</li>
+<li>CPU和内存：1核2G或者2核4G即可</li>
+<li>存储：40-100G绰绰有余</li>
+<li>操作系统：
+<ul>
+<li><input checked="" disabled="" type="checkbox"> aliyun发行版（不想多思考可以选这个）</li>
+<li>如果想做智能家居项目，运行一些特定的物联网框架（如Home Assistant、Node-RED等），建议选择 <strong>Ubuntu</strong> 或 <strong>Debian</strong>，这些可能支持更好一点</li>
+<li>不推荐选择LTS版本或者已经停止维护的发行版</li>
+</ul>
+</li>
+<li>带宽：固定带宽 + （1Mbps到5Mbps），注意：99元套餐3Mbps也够用了</li>
+<li>安全组：配置安全组规则，确保只开放必要的端口（如HTTP 80、HTTPS 443、SSH 22）等</li>
+<li>云监控：记得开，监控内存和cpu等，还可以配置告警规则</li>
+<li>ssl证书：免费的也能用</li>
+<li>DDoS：启用DDoS防护服务</li>
+</ul>
+</li>
+</ul>
+<h2 id="配置远程登录">配置远程登录</h2>
+<p>建议：使用<code>ssh</code>登录，禁用密码登录</p>
+<h3 id="在本地先生成ssh秘钥">在本地先生成ssh秘钥</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh-keygen -t rsa -b <span class="m">4096</span> -C <span class="s2">&#34;your_email@example.com&#34;</span>
+</span></span></code></pre></div><p>默认会保存在 <code>~/.ssh/id_rsa</code>,其中<code> id_rsa</code> 是私钥(不要分享给别人),<code>id_rsa.pub</code>是公钥</p>
+<h3 id="将公钥上传到阿里云ecs实例">将公钥上传到阿里云ECS实例</h3>
+<ul>
+<li><a href="https://www.aliyun.com/">登录阿里云控制台</a></li>
+<li>进入ECS管理台</li>
+<li>找到你的 ECS 实例，点击实例名称进入详情页</li>
+<li>在左侧菜单中，点击 <strong>本实例密钥对</strong></li>
+<li>点击 <strong>绑定密钥对</strong>，选择 <strong>使用已有密钥对</strong> 或 <strong>创建新密钥对</strong></li>
+<li>选择 <strong>使用已有密钥对</strong>，将你的公钥内容（<code>id_rsa.pub</code> 文件内容）粘贴到输入框中</li>
+<li>点击 <strong>确定</strong>，完成绑定</li>
+</ul>
+<h3 id="配置本地ssh登录">配置本地SSH登录</h3>
+<p>在本地配置了<code>iterm2</code>+<code>zsh</code>的情况下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim ~/.zshrc
+</span></span><span class="line"><span class="cl"><span class="c1"># 添加以下内容</span>
+</span></span><span class="line"><span class="cl">ssh-add /Users/username/.ssh/aliyun_rsa
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">aliyun</span><span class="o">=</span><span class="s1">&#39;ssh root@your_server_ip&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> ~/.zshrc
+</span></span></code></pre></div><p>接下来就可以用 <code>aliyun</code> 这个命令直接直接连接机器了</p>
+<h2 id="配置nginx--php--mysql">配置Nginx + PHP + Mysql</h2>
+<h3 id="更新软件">更新软件</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo yum update -y
+</span></span></code></pre></div><h3 id="配置nginx">配置nginx</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo yum install nginx -y
+</span></span><span class="line"><span class="cl">$ sudo systemctl start nginx // 启动nginx
+</span></span><span class="line"><span class="cl">$ sudo systemctl <span class="nb">enable</span> nginx // 设置为开机启动
+</span></span></code></pre></div><p>编辑<code>nginx</code>配置文件</p>
+<pre tabindex="0"><code>$ sudo vim /etc/nginx/conf.d/wordpress.conf
+</code></pre><p>例子：</p>
+<pre tabindex="0"><code>server {
+    listen 80;
+    server_name {your_domain};  # 改为你的域名或IP
+    client_max_body_size 10M; // 单次请求的最大配置
+
+    root /var/www/{your_blog_name};  # 改为你的博客目录
+    index index.php index.html index.htm;
+
+    location / {
+        try_files $uri $uri/ /index.php?$args;
+    }
+
+    location ~ \.php$ {
+        include fastcgi_params;
+        fastcgi_pass 127.0.0.1:9000;  // 这里要注意，用什么fastcgi取决于php.ini里面listen的配置
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+}
+</code></pre><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 检查nginx配置文件是否正确</span>
+</span></span><span class="line"><span class="cl">$ sudo nginx -t
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 重启nginx</span>
+</span></span><span class="line"><span class="cl">$ sudo systemctl restart nginx
+</span></span></code></pre></div><h4 id="访问服务">访问服务</h4>
+<pre tabindex="0"><code>http://{your_domain}
+</code></pre><h4 id="配置数据库">配置数据库</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 安装mysql</span>
+</span></span><span class="line"><span class="cl">$ sudo yum install mysql-server -y
+</span></span><span class="line"><span class="cl">$ sudo systemctl start mysqld
+</span></span><span class="line"><span class="cl">$ sudo systemctl <span class="nb">enable</span> mysqld
+</span></span><span class="line"><span class="cl">$ sudo mysql_secure_installation // 这一步开始交互式配置数据库密码
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 配置数据库</span>
+</span></span><span class="line"><span class="cl">$ sudo mysql -u root -p // 以root账户进行登录
+</span></span><span class="line"><span class="cl">$ &gt; CREATE DATABASE wordpress<span class="p">;</span> 创建wordpress用户
+</span></span><span class="line"><span class="cl">$ &gt; CREATE USER <span class="s1">&#39;{your_username}&#39;</span>@<span class="s1">&#39;localhost&#39;</span> IDENTIFIED BY <span class="s1">&#39;{your_password}&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">$ &gt; GRANT ALL PRIVILEGES ON wordpress.* TO <span class="s1">&#39;{your_username}&#39;</span>@<span class="s1">&#39;localhost&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">$ &gt; FLUSH PRIVILEGES<span class="p">;</span> // 刷新权限
+</span></span><span class="line"><span class="cl">$ &gt; EXIT<span class="p">;</span>
+</span></span></code></pre></div><p>注意：
+- 这里的<code>{your_username}</code>是额外创建给wordpress这个应用的用户，主要用来隔离数据库权限的，可以修改成自己想要的用户名
+- <code>'{your_username}'@'localhost'</code>这里的单引号一个都别省略，语法就是这样的，<code>localhost</code>这里要特别注意，如果是单纯在内网访问，可以只给一个<code>localhost</code>就可以了,如果想用<code>datagrip</code>或者<code>navicat</code>这样的管理工具远程访问，可以额外创建一个<code>'{your_username}'@'xxx.xxx.xxx.xxx'</code>这样user用来给特定ip进行访问
+- <code>{your_password}</code>就填你想要的密码
+- <code>grant</code>语句里的<code>wordpress.*</code>指的是<code>wordpress</code>数据库的<code>*</code>,如果想所有数据库都对这个用户开放的话，就写<code>*.*</code>
+特别注意：</p>
+<ul>
+<li>要用<code>datagrip</code>这样的管理工具去管理数据库，就要用到远程连接，记得要开放对应的远程端口，如果只是自己用，可以配置开放特定ip</li>
+</ul>
+<h4 id="阿里云对特定ip开放特定端口白名单">阿里云对特定ip开放特定端口白名单</h4>
+<ul>
+<li>打开阿里云ECS控制台,找到你需要配置的 ECS 实例，点击实例名称进入详情页</li>
+<li>在实例详情页的左侧菜单中，点击 <strong>安全组</strong>,找到当前实例绑定的安全组，点击安全组 ID 进入安全组详情页</li>
+<li>在安全组详情页，点击 <strong>配置规则</strong>，选择 <strong>入方向</strong> 标签页，点击 <strong>手动添加</strong>，</li>
+<li>填写以下信息：
+<ul>
+<li><strong>授权策略</strong>：允许。</li>
+<li><strong>协议类型</strong>：MySQL（3306）。</li>
+<li><strong>端口范围</strong>：3306/3306。</li>
+<li><strong>优先级</strong>：1（数字越小，优先级越高）。</li>
+<li><strong>授权类型</strong>：IPv4 地址段访问。</li>
+<li><strong>授权对象</strong>：填写你需要允许的特定 IP 地址。例如：
+<ul>
+<li>如果只允许单个 IP，填写 <code>x.x.x.x/32</code>（例如 <code>192.168.1.100/32</code>）。</li>
+<li>如果允许一个 IP 段，填写 <code>x.x.x.x/24</code>（例如 <code>192.168.1.0/24</code>）。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="安装php">安装php</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo yum install epel-release -y
+</span></span><span class="line"><span class="cl">$ sudo yum install https://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
+</span></span><span class="line"><span class="cl">$ sudo yum install yum-utils -y
+</span></span><span class="line"><span class="cl">$ sudo yum-config-manager --enable remi-php81
+</span></span><span class="line"><span class="cl">$ sudo yum install php php-mysqlnd php-gd php-xml php-mbstring php-json -y
+</span></span><span class="line"><span class="cl">$ php -v //验证php是否安装成功
+</span></span><span class="line"><span class="cl">$ sudo yum install php-fpm -y // 安装php-fpm
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 启动 PHP-FPM 并设置开机自启动：</span>
+</span></span><span class="line"><span class="cl">$ sudo systemctl start php-fpm
+</span></span><span class="line"><span class="cl">$ sudo systemctl <span class="nb">enable</span> php-fpm
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 验证 PHP-FPM 是否正常运行：</span>
+</span></span><span class="line"><span class="cl">$ sudo systemctl status php-fpm
+</span></span></code></pre></div><h4 id="安装wordpress">安装wordpress</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 下载wordpress</span>
+</span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> /var/www
+</span></span><span class="line"><span class="cl">$ sudo wget https://cn.wordpress.org/wordpress-6.7.1-zh_CN.tar.gz
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 解压wordpress</span>
+</span></span><span class="line"><span class="cl">$ sudo tar -xvzf latest.tar.gz
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 重命名wordpress目录（可选）</span>
+</span></span><span class="line"><span class="cl">$ sudo mv wordpress your_blog_name // 最后一个参数是自己的博客名
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 设置wordpress权限</span>
+</span></span><span class="line"><span class="cl">$ sudo chmod -R <span class="m">755</span> /var/www/your_blog_name
+</span></span><span class="line"><span class="cl">$ sudo chown -R nginx:nginx /var/www/wordpress <span class="o">(</span>可选：这里要注意启动nginx的linux用户和用户组是哪个，这里保持跟nginx的一致就行，如果启动nginx的是root用户，就不要动<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 配置 WordPress**</span>
+</span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> /var/www/your_blog_name
+</span></span><span class="line"><span class="cl">$ sudo cp wp-config-sample.php wp-config.php
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ sudo vim wp-config.php // 改一下DB_NAME、DB_USER、DB_PASSWORD就可以了
+</span></span><span class="line"><span class="cl">&gt; define<span class="o">(</span><span class="s1">&#39;DB_NAME&#39;</span>, <span class="s1">&#39;wordpress&#39;</span><span class="o">)</span><span class="p">;</span> // 这个是刚刚在mysql创建的wordpress数据库名
+</span></span><span class="line"><span class="cl">&gt; define<span class="o">(</span><span class="s1">&#39;DB_USER&#39;</span>, <span class="s1">&#39;{your_username}&#39;</span><span class="o">)</span><span class="p">;</span> // 这个就是刚刚在mysql创建的给wordpress用的用户名
+</span></span><span class="line"><span class="cl">&gt; define<span class="o">(</span><span class="s1">&#39;DB_PASSWORD&#39;</span>, <span class="s1">&#39;{your_password}&#39;</span><span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">&gt; define<span class="o">(</span><span class="s1">&#39;DB_HOST&#39;</span>, <span class="s1">&#39;localhost&#39;</span><span class="o">)</span><span class="p">;</span>
+</span></span></code></pre></div><h4 id="wordpress的一些其他踩坑点">wordpress的一些其他踩坑点</h4>
+<h5 id="上传主题时-或-健康检查没有写入权限">上传主题时 或 健康检查没有写入权限</h5>
+<p>原因是用户组没有配置对，检查用户和用户组具备<code>755</code>权限</p>
+<h5 id="单次请求上传提示文件过大">单次请求上传提示文件过大</h5>
+<ul>
+<li><strong><code>Nginx</code></strong>：设置 <code>client_max_body_size 100M;</code></li>
+<li><strong><code>PHP</code></strong>：调整 <code>upload_max_filesize</code> 和 <code>post_max_size</code></li>
+<li>修改<code>wordpress</code>根目录的<code>wp-config.php</code>配置: <code>define('WP_MEMORY_LIMIT', '256M');</code></li>
+</ul>
+<h4 id="一些定位方法">一些定位方法:</h4>
+<h5 id="查看nginx报错日志">查看nginx报错日志：</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ tail -f /var/log/nginx/error.log
+</span></span></code></pre></div></article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script type="application/javascript" src='http://localhost:1313/js/toc.js'></script>
+<link rel="stylesheet" href='http://localhost:1313/css/toc.css' />
+
+  
+</div>
+
+  <div class="footer container-xl width-full p-responsive">
+  <div
+    class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between flex-sm-items-center pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mr-lg-4" href="http://localhost:1313/">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24">
+        <path fill-rule="evenodd"
+          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+        </path>
+      </svg>
+    </a>
+    <ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+      
+      <li class="mr-3 mr-lg-0">Theme by <a href='https://github.com/MeiK2333/github-style'>github-style</a></li>
+      
+      <li class="mr-3 mr-lg-0">GitHub and the Invertocat logo are trademarks of <a href="https://github.com/">GitHub, Inc.</a></li>
+    </ul>
+  </div>
+  <div class="d-flex flex-justify-center pb-6">
+    <span class="f6 text-gray-light"></span>
+  </div>
+
+
+</div>
+
+</body>
+
+<script type="application/javascript" src="http://localhost:1313/js/github-style.js"></script>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+<script type="application/javascript" src='http://localhost:1313/js/search.js'></script>
+
+
+
+</html>
