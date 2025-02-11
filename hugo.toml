@@ -34,7 +34,7 @@ lastmod = true
   timeZone = "Asia/Shanghai"
 
 [outputs]
-  home = ["html", "json"]
+  home = ["html", "json", "RSS"]
 
 [outputFormats.json]
   mediaType = "application/json"
