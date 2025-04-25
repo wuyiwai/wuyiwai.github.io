@@ -34,8 +34,8 @@ export default defineConfig({
   },
   experimental: {
     // 检查以下实验特性的拼写和版本是否正确
-    // svg: true,
-    // responsiveImages: true,
-    // preserveScriptOrder: true,
+    svg: true,
+    responsiveImages: true,
+    preserveScriptOrder: true,
   },
 });
