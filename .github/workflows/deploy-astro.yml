@@ -48,6 +48,12 @@ jobs:
       - name: Build
         run: pnpm run build
 
+      # 添加运行pagefind的步骤  
+      - name: Run Pagefind
+        run: |
+          pagefind --source dist --bundle-dir dist/pagefind
+          cp -r dist/pagefind public/
+
       # 8. 部署到 GitHub Pages
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
