@@ -83,6 +83,11 @@ const isActive = (path: string) => {
               About
             </a>
           </li>
+          <li class="col-span-2">
+            <a target="_blank" href="/rss.xml" class:list={{ "active-nav": isActive("/rss.xml") }}>
+              Rss
+            </a>
+          </li>
           {
             SITE.showArchives && (
               <li class="col-span-2">
