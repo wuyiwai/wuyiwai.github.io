@@ -3,47 +3,185 @@ import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout title="Weibo">
-  <!-- 评论容器 -->
-  <div id="comments"></div>
+  <div id="weibo-list"></div>
+  <div id="pagination" style="text-align:center; margin: 1.5rem 0;"></div>
 
-  <!-- 依赖：React / ReactDOM / Gwitter -->
-  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin="anonymous" is:inline></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin="anonymous" is:inline></script>
-  <script src="https://unpkg.com/gwitter/dist/gwitter.min.js" is:inline></script>
+  <!-- 引入 marked.js & DOMPurify (CDN 版本) -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" is:inline></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.5/dist/purify.min.js" is:inline></script>
 
-  <!-- 初始化 Gwitter -->
   <script is:inline>
-    gwitter({
-      container: document.getElementById('comments'),
-      config: {
-        request: {
-          owner: "wuyiwai",
-          repo: "weibo",
-          pageSize: 6,
-        },
-      }
-    });
-  </script>
+    const owner = "wuyiwai";
+    const repo  = "weibo";
+    let currentPage = 1;
+    const perPage = 5;
 
-  <!-- 样式优化 -->
-  <style>
-    /* 去掉 Gwitter 内置 header，防止和 astro-paper 的 header 重叠 */
-    #comments .gwitter-header {
-      display: none;
+    async function fetchIssues(page = 1) {
+      const url = `https://api.github.com/repos/${owner}/${repo}/issues?per_page=${perPage}&page=${page}`;
+      const res = await fetch(url);
+      if (!res.ok) {
+        document.getElementById("weibo-list").innerHTML = "<p>拉取失败，请稍后重试</p>";
+        return;
+      }
+      const issues = await res.json();
+      renderIssues(issues);
+      renderPagination(issues.length, page);
     }
 
-    /* 评论区整体排版对齐 astro-paper 的正文 */
-    #comments {
-      max-width: 42rem;   /* 与正文宽度接近 */
-      margin: 2rem auto;  /* 居中 */
-      padding: 0 1rem;    /* 左右留白 */
+    function renderIssues(issues) {
+      const container = document.getElementById("weibo-list");
+      if (issues.length === 0) {
+        container.innerHTML = "<p>暂无内容</p>";
+        return;
+      }
+
+      const html = issues.map(issue => {
+        // Markdown -> HTML
+        let rawHTML = marked.parse(issue.body || "");
+        // 过滤无害 HTML
+        rawHTML = DOMPurify.sanitize(rawHTML);
+
+        return `
+          <article class="weibo-card">
+            <header>
+              <img src="${issue.user.avatar_url}" alt="${issue.user.login}" class="avatar"/>
+              <span class="author">${issue.user.login}</span>
+              <time datetime="${issue.created_at}">
+                ${new Date(issue.created_at).toLocaleString()}
+              </time>
+            </header>
+            <div class="content markdown-body">
+              ${rawHTML}
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      container.innerHTML = html;
+    }
+
+    function renderPagination(count, page) {
+      const container = document.getElementById("pagination");
+      let html = "";
+      if (page > 1) {
+        html += `<button id="prev">上一页</button>`;
+      }
+      if (count === perPage) {
+        html += `<button id="next">下一页</button>`;
+      }
+      container.innerHTML = html;
+
+      if (document.getElementById("prev")) {
+        document.getElementById("prev").onclick = () => {
+          currentPage--;
+          fetchIssues(currentPage);
+        };
+      }
+      if (document.getElementById("next")) {
+        document.getElementById("next").onclick = () => {
+          currentPage++;
+          fetchIssues(currentPage);
+        };
+      }
+    }
+
+    // 初始化
+    fetchIssues(currentPage);
+  </script>
+
+  <style>
+    #weibo-list {
+      max-width: 42rem;
+      margin: 2rem auto;
+      padding: 0 1rem;
       box-sizing: border-box;
     }
 
-    /* 评论卡片稍微增加点圆角和阴影，更贴合 astro-paper 风格 */
-    #comments .gwitter-comment {
+    .weibo-card {
+      border: 1px solid #eaeaea;
       border-radius: 6px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      background: #fff;
+      box-shadow: 0 2px 3px rgba(0,0,0,0.03);
+    }
+
+    .weibo-card header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .weibo-card .avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+    }
+
+    .weibo-card .author {
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+
+    .weibo-card time {
+      color: #888;
+      font-size: 0.8rem;
+    }
+
+    .weibo-card .content {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #333;
+      word-wrap: break-word;
+    }
+
+    /* Markdown 样式优化，贴近 astro-paper */
+    .markdown-body h1, .markdown-body h2, .markdown-body h3 {
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+    .markdown-body p {
+      margin: 0.5em 0;
+    }
+    .markdown-body code {
+      background: #f6f8fa;
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+    .markdown-body pre {
+      background: #f6f8fa;
+      padding: 0.8em;
+      overflow-x: auto;
+      border-radius: 4px;
+    }
+    .markdown-body blockquote {
+      padding-left: 1em;
+      border-left: 4px solid #e4e4e4;
+      color: #666;
+    }
+    .markdown-body img {
+      max-width: 100%;
+      border-radius: 4px;
+      margin: 0.5rem 0;
+    }
+
+    #pagination button {
+      margin: 0 0.5rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid #ddd;
+      background: #fafafa;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #pagination button:hover {
+      background: #f0f0f0;
     }
   </style>
 </Layout>
