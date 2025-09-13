@@ -1,5 +1,5 @@
 ---
-title: 2025年9月
+title: 折腾 Gwitter 的记录
 date: 2025-09-13
 pubDatetime: 2025-09-13
 summary: 折腾 Gwitter 的记录
