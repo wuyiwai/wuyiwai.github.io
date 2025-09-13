@@ -3,9 +3,11 @@ import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout title="Weibo">
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="https://unpkg.com/gwitter/dist/gwitter.min.js"></script>
+  <div id="comments"></div>
+
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin="anonymous" is:inline></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin="anonymous" is:inline></script>
+  <script src="https://unpkg.com/gwitter/dist/gwitter.min.js" is:inline></script>
 
   <script is:inline>
     gwitter({
