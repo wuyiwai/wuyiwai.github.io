@@ -3,12 +3,15 @@ import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout title="Weibo">
+  <!-- 评论容器 -->
   <div id="comments"></div>
 
+  <!-- 依赖：React / ReactDOM / Gwitter -->
   <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin="anonymous" is:inline></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin="anonymous" is:inline></script>
   <script src="https://unpkg.com/gwitter/dist/gwitter.min.js" is:inline></script>
 
+  <!-- 初始化 Gwitter -->
   <script is:inline>
     gwitter({
       container: document.getElementById('comments'),
@@ -21,4 +24,26 @@ import Layout from "@/layouts/Layout.astro";
       }
     });
   </script>
+
+  <!-- 样式优化 -->
+  <style>
+    /* 去掉 Gwitter 内置 header，防止和 astro-paper 的 header 重叠 */
+    #comments .gwitter-header {
+      display: none;
+    }
+
+    /* 评论区整体排版对齐 astro-paper 的正文 */
+    #comments {
+      max-width: 42rem;   /* 与正文宽度接近 */
+      margin: 2rem auto;  /* 居中 */
+      padding: 0 1rem;    /* 左右留白 */
+      box-sizing: border-box;
+    }
+
+    /* 评论卡片稍微增加点圆角和阴影，更贴合 astro-paper 风格 */
+    #comments .gwitter-comment {
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+  </style>
 </Layout>
