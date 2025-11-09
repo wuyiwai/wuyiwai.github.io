@@ -2,3 +2,4 @@ node_modules/*
 dist/*
 content/.obsidian/
 .idea/
+src/data/blog/自动化评测/
