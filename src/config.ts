@@ -18,6 +18,7 @@ export const SITE = {
     url: "https://github.com/satnaing/astro-paper/edit/main/",
   },
   dynamicOgImage: false,
+  dir: "ltr", // "rtl" | "auto" - 新增：RTL 语言支持
   lang: "zh-cn", // html lang code. Set this empty and default will be "en"
   timezone: "Asia/Shanghai", // Default global timezone (IANA format) https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 } as const;
