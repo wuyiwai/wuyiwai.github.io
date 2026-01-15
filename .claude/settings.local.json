@@ -13,7 +13,9 @@
       "Bash(pnpm build:*)",
       "Bash(grep:*)",
       "Bash(git checkout:*)",
-      "Bash(git commit --amend -m \"$\\(cat <<''EOF''\nchore: merge upstream astro-paper v5.5.1\n\nUpdates from v5.2.0 to v5.5.1:\n- v5.5.1: Tag component improvements, OG image fixes\n- v5.5.0: Enhanced file name transformer\n- v5.4.x: RTL support, Shiki transformers, code block improvements\n- v5.3.0: Improved back-to-top button, scroll anchor fixes\n\nPreserved custom config:\n- Site settings \\(title, author, language\\)\n- Social links \\(GitHub, Mail\\)\nEOF\n\\)\")"
+      "Bash(git commit --amend -m \"$\\(cat <<''EOF''\nchore: merge upstream astro-paper v5.5.1\n\nUpdates from v5.2.0 to v5.5.1:\n- v5.5.1: Tag component improvements, OG image fixes\n- v5.5.0: Enhanced file name transformer\n- v5.4.x: RTL support, Shiki transformers, code block improvements\n- v5.3.0: Improved back-to-top button, scroll anchor fixes\n\nPreserved custom config:\n- Site settings \\(title, author, language\\)\n- Social links \\(GitHub, Mail\\)\nEOF\n\\)\")",
+      "Bash(ls:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nchore: restore custom index page and remove upstream example posts\n\n- Restore simplified hero section with SITE.desc\n- Remove upstream example blog posts \\(adding-new-post, how-to-*, etc.\\)\n- Remove _releases and examples directories\nEOF\n\\)\")"
     ]
   }
 }
